@@ -19,3 +19,17 @@ export default createRouter({
   history: createWebHistory(),
   routes
 })
+const routes = [
+  {
+    path: '/',
+    component: HomeView
+  },
+  {
+    path: '/login',
+    component: LoginView
+  },
+  {
+    path: '/cadastro',
+    component: RegisterView
+  }
+]
