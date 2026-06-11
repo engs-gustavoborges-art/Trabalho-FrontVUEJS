@@ -88,7 +88,151 @@ export const filmesLancamento = [
   }
 ]
 
+export const filmesCategoriaExtras = [
+  {
+    id: 13,
+    titulo: 'Mad Max: Estrada da Furia',
+    genero: 'Acao',
+    nota: 8.1,
+    imagem: 'https://upload.wikimedia.org/wikipedia/pt/thumb/2/23/Max_Mad_Fury_Road_Newest_Poster.jpg/250px-Max_Mad_Fury_Road_Newest_Poster.jpg'
+  },
+  {
+    id: 14,
+    titulo: 'John Wick',
+    genero: 'Acao',
+    nota: 7.4,
+    imagem: 'https://upload.wikimedia.org/wikipedia/pt/1/13/John_wick_ver3.jpg'
+  },
+  {
+    id: 15,
+    titulo: 'Matrix',
+    genero: 'Acao',
+    nota: 8.7,
+    imagem: 'https://static.wikia.nocookie.net/dublagem/images/7/7a/Matrix.jpg/revision/latest?cb=20250716174206&path-prefix=pt-br'
+  },
+  {
+    id: 16,
+    titulo: 'Top Gun: Maverick',
+    genero: 'Acao',
+    nota: 8.2,
+    imagem: 'https://upload.wikimedia.org/wikipedia/pt/d/d2/Top_Gun_Maverick.jpg'
+  },
+  {
+    id: 17,
+    titulo: 'Blade Runner 2049',
+    genero: 'Ficcao Cientifica',
+    nota: 8.0,
+    imagem: 'https://static.wikia.nocookie.net/dublagem/images/f/fd/BladeRunner2049.jpg/revision/latest?cb=20241008033807&path-prefix=pt-br'
+  },
+  {
+    id: 18,
+    titulo: 'A Chegada',
+    genero: 'Ficcao Cientifica',
+    nota: 7.9,
+    imagem: 'https://m.media-amazon.com/images/M/MV5BZTk1YWEyMzItNGZiOC00YmU5LWFmZTgtMGFmZTA3NTU1YTk1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg'
+  },
+  {
+    id: 19,
+    titulo: 'Perdido em Marte',
+    genero: 'Ficcao Cientifica',
+    nota: 8.0,
+    imagem: 'https://br.web.img2.acsta.net/pictures/16/01/18/18/57/082205.jpg'
+  },
+  {
+    id: 20,
+    titulo: 'Gravidade',
+    genero: 'Ficcao Cientifica',
+    nota: 7.7,
+    imagem: 'https://m.media-amazon.com/images/S/pv-target-images/59944a01eb1efe504369ea42e704d492681d0217d720c8faab012c6ff1abcddf.jpg'
+  },
+  {
+    id: 21,
+    titulo: 'Shrek',
+    genero: 'Animacao',
+    nota: 7.9,
+    imagem: 'https://br.web.img2.acsta.net/medias/nmedia/18/91/54/04/20150812.jpg'
+  },
+  {
+    id: 22,
+    titulo: 'Procurando Nemo',
+    genero: 'Animacao',
+    nota: 8.2,
+    imagem: 'https://upload.wikimedia.org/wikipedia/pt/2/29/Finding_Nemo.jpg'
+  },
+  {
+    id: 23,
+    titulo: 'Os Incriveis',
+    genero: 'Animacao',
+    nota: 8.0,
+    imagem: 'https://biblioteca.letras.ufrj.br/wp-content/uploads/2026/01/image-3.jpeg'
+  },
+  {
+    id: 24,
+    titulo: 'Como Treinar o Seu Dragao',
+    genero: 'Animacao',
+    nota: 8.1,
+    imagem: 'https://upload.wikimedia.org/wikipedia/pt/e/e3/How_To_Trainer_Your_Dragon_2025_-_IMAX_Poster.jpg'
+  },
+  {
+    id: 25,
+    titulo: 'Indiana Jones',
+    genero: 'Aventura',
+    nota: 8.4,
+    imagem: 'https://placehold.co/300x450/222222/ffffff?text=Indiana+Jones'
+  },
+  {
+    id: 26,
+    titulo: 'Jurassic Park',
+    genero: 'Aventura',
+    nota: 8.2,
+    imagem: 'https://placehold.co/300x450/222222/ffffff?text=Jurassic+Park'
+  },
+  {
+    id: 27,
+    titulo: 'Piratas do Caribe',
+    genero: 'Aventura',
+    nota: 8.1,
+    imagem: 'https://placehold.co/300x450/222222/ffffff?text=Piratas'
+  },
+  {
+    id: 28,
+    titulo: 'Jumanji',
+    genero: 'Aventura',
+    nota: 7.1,
+    imagem: 'https://placehold.co/300x450/222222/ffffff?text=Jumanji'
+  },
+  {
+    id: 29,
+    titulo: 'Invocacao do Mal',
+    genero: 'Terror',
+    nota: 7.5,
+    imagem: 'https://placehold.co/300x450/222222/ffffff?text=Invocacao+do+Mal'
+  },
+  {
+    id: 30,
+    titulo: 'Corra',
+    genero: 'Terror',
+    nota: 7.8,
+    imagem: 'https://placehold.co/300x450/222222/ffffff?text=Corra'
+  },
+  {
+    id: 31,
+    titulo: 'Um Lugar Silencioso',
+    genero: 'Terror',
+    nota: 7.5,
+    imagem: 'https://placehold.co/300x450/222222/ffffff?text=Lugar+Silencioso'
+  },
+  {
+    id: 32,
+    titulo: 'It: A Coisa',
+    genero: 'Terror',
+    nota: 7.3,
+    imagem: 'https://placehold.co/300x450/222222/ffffff?text=It'
+  }
+]
+
 export const todosFilmes = [
   ...filmesDestaque,
-  ...filmesLancamento
+  ...filmesLancamento,
+  ...filmesCategoriaExtras
 ]

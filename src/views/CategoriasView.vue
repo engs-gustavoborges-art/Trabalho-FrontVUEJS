@@ -50,23 +50,48 @@
       >
         <div class="secao-topo">
           <h2>{{ secao.genero }}</h2>
-          <span>{{ secao.filmes.length }} filmes</span>
+          <div class="secao-acoes">
+            <span>{{ secao.filmes.length }} filmes</span>
+
+            <div class="controles">
+              <button
+                class="btn-carrossel"
+                type="button"
+                @click="moverCarrossel(idCarrossel(secao.genero), -1)"
+              >
+                &lsaquo;
+              </button>
+
+              <button
+                class="btn-carrossel"
+                type="button"
+                @click="moverCarrossel(idCarrossel(secao.genero), 1)"
+              >
+                &rsaquo;
+              </button>
+            </div>
+          </div>
         </div>
 
-        <div class="grade-filmes">
-          <article
-            class="card"
-            v-for="filme in secao.filmes"
-            :key="filme.id"
+        <div class="carrossel-area">
+          <div
+            :id="idCarrossel(secao.genero)"
+            class="carrossel"
           >
-            <img :src="filme.imagem" :alt="filme.titulo">
+            <article
+              class="card"
+              v-for="filme in secao.filmes"
+              :key="filme.id"
+            >
+              <img :src="filme.imagem" :alt="filme.titulo">
 
-            <div class="info">
-              <h3>{{ filme.titulo }}</h3>
-              <p>{{ filme.genero }}</p>
-              <span>Nota {{ filme.nota }}</span>
-            </div>
-          </article>
+              <div class="info">
+                <h3>{{ filme.titulo }}</h3>
+                <p>{{ filme.genero }}</p>
+                <span>Nota {{ filme.nota }}</span>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -126,6 +151,23 @@ const secoesFiltradas = computed(() => {
     }))
     .filter(secao => secao.filmes.length > 0)
 })
+
+function idCarrossel(genero) {
+  return `carrossel-${genero.toLowerCase().replace(/\s+/g, '-')}`
+}
+
+function moverCarrossel(id, direcao) {
+  const carrossel = document.getElementById(id)
+
+  if (!carrossel) {
+    return
+  }
+
+  carrossel.scrollBy({
+    left: direcao * 280,
+    behavior: 'smooth'
+  })
+}
 </script>
 
 <style scoped src="../styles/CategoriasView.css"></style>
