@@ -40,7 +40,7 @@
   </div>
 </template>
 
-<script src="./Home.js"></script>
+<script src="../router/home.js"></script>
 
 <style scoped>
 .home{
