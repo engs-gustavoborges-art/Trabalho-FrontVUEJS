@@ -1,10 +1,12 @@
-```vue
 <template>
   <div class="container">
 
     <div class="login-card">
 
-      <h1>Sistema de Usuários</h1>
+      <!-- Logo -->
+      <img :src="logo" alt="Logo" class="logo">
+
+      <p class="subtitulo">Seu catálogo de filmes</p>
 
       <form @submit.prevent="fazerLogin">
 
@@ -30,28 +32,18 @@
           Preencha todos os campos corretamente.
         </p>
 
-        <button type="submit">
+        <button type="submit" class="btn-login">
           Entrar
         </button>
 
       </form>
 
-      <hr>
-
-      <h2>Usuários Logados</h2>
-
-      <ul v-if="usuarios.length > 0">
-        <li
-          v-for="(usuario, index) in usuarios"
-          :key="index"
-        >
-          {{ usuario }}
-        </li>
-      </ul>
-
-      <p v-else>
-        Nenhum usuário logado.
-      </p>
+      <router-link
+        to="/cadastro"
+        class="btn-cadastro"
+      >
+        Não possui conta? Cadastre-se
+      </router-link>
 
     </div>
 
@@ -60,12 +52,15 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+import logo from '../assets/logo.png'
+
+const router = useRouter()
 
 const email = ref('')
 const senha = ref('')
 const erro = ref(false)
-
-const usuarios = ref([])
 
 function fazerLogin() {
 
@@ -79,12 +74,9 @@ function fazerLogin() {
 
   erro.value = false
 
-  usuarios.value.push(email.value)
-
   alert('Login realizado com sucesso!')
 
-  email.value = ''
-  senha.value = ''
+  router.push('/home')
 }
 </script>
 
@@ -97,37 +89,51 @@ function fazerLogin() {
 }
 
 .container{
-  width: 100%;
-  min-height: 100vh;
+  width:100%;
+  min-height:100vh;
+  padding:24px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 
-  background-image: url('../assets/background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-image:url('../assets/background.jpg');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
 }
 
 .login-card{
-  width: 100%;
-  max-width: 500px;
+  width:100%;
+  max-width:430px;
 
-  background: rgba(255,255,255,0.95);
-  padding: 30px;
-  border-radius: 15px;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(5px);
 
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  padding:32px;
+  border-radius:16px;
+
+  box-shadow:0 8px 25px rgba(0,0,0,0.3);
+}
+
+.logo{
+  width:180px;
+  max-width:70%;
+  height:auto;
+  display:block;
+  margin:0 auto 16px;
 }
 
 h1{
   text-align:center;
-  margin-bottom:20px;
+  color:#111827;
+  margin-bottom:5px;
 }
 
-h2{
-  margin-top:20px;
+.subtitulo{
+  text-align:center;
+  color:#6b7280;
+  margin-bottom:25px;
 }
 
 .campo{
@@ -136,23 +142,65 @@ h2{
   margin-bottom:15px;
 }
 
-input{
-  padding:12px;
-  border:1px solid #ccc;
-  border-radius:8px;
+label{
+  margin-bottom:5px;
+  font-weight:600;
+  color:#111827;
 }
 
-button{
+input{
   width:100%;
-  padding:12px;
+  height:48px;
+  padding:0 14px;
+  border:1px solid #d1d5db;
+  border-radius:8px;
+  font-size:15px;
+}
+
+input:focus{
+  outline:none;
+  border-color:#2563eb;
+}
+
+.btn-login{
+  width:100%;
+  height:48px;
+
   border:none;
   border-radius:8px;
-  cursor:pointer;
+
+  background:#dc2626;
+  color:white;
+
   font-size:16px;
+  cursor:pointer;
+
+  transition:.3s;
 }
 
-button:hover{
-  opacity:0.9;
+.btn-login:hover{
+  opacity:.9;
+}
+
+.btn-cadastro{
+  display:block;
+
+  margin-top:16px;
+  padding:14px 12px;
+
+  text-align:center;
+  text-decoration:none;
+
+  background:#2563eb;
+  color:white;
+
+  border-radius:8px;
+
+  transition:.3s;
+}
+
+.btn-cadastro:hover{
+  opacity:.9;
 }
 
 .erro{
@@ -160,13 +208,16 @@ button:hover{
   margin-bottom:10px;
 }
 
-ul{
-  margin-top:10px;
-}
+@media (max-width:768px){
 
-li{
-  margin-bottom:5px;
+  .login-card{
+    padding:24px;
+  }
+
+  .logo{
+    width:140px;
+  }
+
 }
 
 </style>
-```
