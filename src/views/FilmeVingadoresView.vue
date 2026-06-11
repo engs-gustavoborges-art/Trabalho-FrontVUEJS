@@ -11,7 +11,7 @@
       <nav class="menu">
         <router-link to="/home" class="menu-link">Inicio</router-link>
         <router-link to="/categorias" class="menu-link">Categorias</router-link>
-        <a href="#" class="menu-link">Favoritos</a>
+        <router-link to="/favoritos" class="menu-link">Favoritos</router-link>
         <router-link to="/login" class="menu-link">Sair</router-link>
       </nav>
     </aside>
@@ -119,12 +119,17 @@
 import { ref } from 'vue'
 import logo from '../assets/logo.png'
 import { filmesDestaque } from '../data/filmes'
+import {
+  adicionarFavorito,
+  filmeEstaFavoritado,
+  removerFavorito
+} from '../utils/favoritos'
 
 const filme = filmesDestaque.find(item => item.id === 1)
 const qualidades = ['Full HD', 'HD', '4K']
 const qualidadeSelecionada = ref('Full HD')
 const audioSelecionado = ref('Dublado')
-const favorito = ref(false)
+const favorito = ref(filmeEstaFavoritado(filme.id))
 const mensagem = ref('')
 
 const comentarios = [
@@ -154,6 +159,13 @@ function reproduzir() {
 
 function alternarFavorito() {
   favorito.value = !favorito.value
+
+  if (favorito.value) {
+    adicionarFavorito(filme.id)
+  } else {
+    removerFavorito(filme.id)
+  }
+
   mensagem.value = favorito.value
     ? 'Filme adicionado aos favoritos.'
     : 'Filme removido dos favoritos.'

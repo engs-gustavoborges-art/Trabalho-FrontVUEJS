@@ -1,0 +1,221 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+.favoritos-page{
+  min-height:100vh;
+  display:flex;
+  background:#101014;
+  color:white;
+}
+
+.sidebar{
+  width:200px;
+  min-height:100vh;
+  padding:28px 20px;
+
+  position:fixed;
+  top:0;
+  left:0;
+
+  background:#18181d;
+  border-right:1px solid #2a2a32;
+}
+
+.logo{
+  width:180px;
+  max-width:100%;
+  height:auto;
+  display:block;
+  margin:0 auto 36px;
+}
+
+.menu{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.menu-link{
+  padding:13px 14px;
+  border-radius:8px;
+
+  color:#d1d5db;
+  text-decoration:none;
+  font-weight:600;
+
+  transition:.3s;
+}
+
+.menu-link:hover,
+.menu-link.ativo{
+  background:#dc2626;
+  color:white;
+}
+
+.conteudo{
+  width:100%;
+  min-height:100vh;
+  margin-left:200px;
+}
+
+.hero-favoritos{
+  min-height:220px;
+  padding:48px 40px;
+
+  display:flex;
+  align-items:center;
+
+  background:#1c1c1c;
+}
+
+.hero-favoritos h1{
+  margin-bottom:8px;
+  font-size:36px;
+}
+
+.hero-favoritos p{
+  color:#d1d5db;
+}
+
+.favoritos-lista{
+  padding:32px 40px;
+}
+
+.secao-topo{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  margin-bottom:20px;
+}
+
+.secao-topo span{
+  color:#d1d5db;
+  font-size:14px;
+  font-weight:600;
+}
+
+.grade-filmes{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
+  gap:20px;
+}
+
+.card{
+  background:#222;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 8px 18px rgba(0,0,0,.25);
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 16px 28px rgba(0,0,0,.38);
+}
+
+.card img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  cursor:pointer;
+  transition:transform .3s ease;
+}
+
+.card:hover img{
+  transform:scale(1.05);
+}
+
+.info{
+  padding:15px;
+}
+
+.info h3{
+  margin-bottom:8px;
+  cursor:pointer;
+}
+
+.info p{
+  color:#d1d5db;
+  margin-bottom:8px;
+}
+
+.info span{
+  display:block;
+  margin-bottom:14px;
+  color:#facc15;
+  font-weight:700;
+}
+
+.info button{
+  width:100%;
+  height:42px;
+  border:none;
+  border-radius:8px;
+
+  background:#dc2626;
+  color:white;
+
+  font-weight:700;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.info button:hover{
+  background:#f40612;
+}
+
+.sem-resultados{
+  color:#d1d5db;
+}
+
+@media (max-width:768px){
+
+  .favoritos-page{
+    flex-direction:column;
+  }
+
+  .sidebar{
+    width:100%;
+    min-height:auto;
+    padding:16px;
+
+    position:static;
+  }
+
+  .logo{
+    width:130px;
+    margin-bottom:16px;
+  }
+
+  .menu{
+    flex-direction:row;
+    overflow-x:auto;
+  }
+
+  .menu-link{
+    white-space:nowrap;
+  }
+
+  .conteudo{
+    margin-left:0;
+  }
+
+  .hero-favoritos{
+    padding:32px 20px;
+  }
+
+  .hero-favoritos h1{
+    font-size:30px;
+  }
+
+  .favoritos-lista{
+    padding:24px 20px;
+  }
+
+}

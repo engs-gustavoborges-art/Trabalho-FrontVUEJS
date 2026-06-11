@@ -11,7 +11,7 @@
       <nav class="menu">
         <router-link to="/home" class="menu-link">Inicio</router-link>
         <router-link to="/categorias" class="menu-link ativo">Categorias</router-link>
-        <a href="#" class="menu-link">Favoritos</a>
+        <router-link to="/favoritos" class="menu-link">Favoritos</router-link>
         <router-link to="/login" class="menu-link">Sair</router-link>
       </nav>
     </aside>
