@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import CategoriasView from '../views/CategoriasView.vue'
+import FilmeVingadoresView from '../views/FilmeVingadoresView.vue'
 
 const routes = [
   {
@@ -29,6 +30,11 @@ const routes = [
     path: '/categorias',
     name: 'categorias',
     component: CategoriasView
+  },
+  {
+    path: '/filmes/vingadores-ultimato',
+    name: 'vingadores-ultimato',
+    component: FilmeVingadoresView
   }
 ]
 

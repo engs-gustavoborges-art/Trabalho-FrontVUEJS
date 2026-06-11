@@ -1,9 +1,11 @@
 import { ref, computed } from 'vue'
+import { useRouter } from 'vue-router'
 import logo from '../assets/logo.png'
 import { filmesDestaque, filmesLancamento } from '../data/filmes'
 
 export default {
   setup() {
+    const router = useRouter()
     const busca = ref('')
 
     const filmesDestaqueLista = ref(filmesDestaque)
@@ -43,6 +45,12 @@ export default {
       })
     }
 
+    function abrirFilme(filme) {
+      if (filme.id === 1) {
+        router.push('/filmes/vingadores-ultimato')
+      }
+    }
+
     return {
       logo,
       busca,
@@ -50,7 +58,8 @@ export default {
       filmesLancamento: filmesLancamentoLista,
       filmesDestaqueFiltrados,
       filmesLancamentoFiltrados,
-      moverCarrossel
+      moverCarrossel,
+      abrirFilme
     }
   }
 }

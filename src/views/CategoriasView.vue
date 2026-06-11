@@ -82,6 +82,7 @@
               class="card"
               v-for="filme in secao.filmes"
               :key="filme.id"
+              @click="abrirFilme(filme)"
             >
               <img :src="filme.imagem" :alt="filme.titulo">
 
@@ -108,9 +109,11 @@
 
 <script setup>
 import { computed, ref } from 'vue'
+import { useRouter } from 'vue-router'
 import logo from '../assets/logo.png'
 import { todosFilmes } from '../data/filmes'
 
+const router = useRouter()
 const busca = ref('')
 const generoSelecionado = ref('')
 
@@ -167,6 +170,12 @@ function moverCarrossel(id, direcao) {
     left: direcao * 280,
     behavior: 'smooth'
   })
+}
+
+function abrirFilme(filme) {
+  if (filme.id === 1) {
+    router.push('/filmes/vingadores-ultimato')
+  }
 }
 </script>
 

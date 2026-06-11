@@ -61,6 +61,7 @@
               class="card"
               v-for="filme in filmesDestaqueFiltrados"
               :key="filme.id"
+              @click="abrirFilme(filme)"
             >
               <img :src="filme.imagem" :alt="filme.titulo">
 
@@ -113,6 +114,7 @@
               class="card"
               v-for="filme in filmesLancamentoFiltrados"
               :key="filme.id"
+              @click="abrirFilme(filme)"
             >
               <img :src="filme.imagem" :alt="filme.titulo">
 
