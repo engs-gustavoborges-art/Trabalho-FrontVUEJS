@@ -23,11 +23,24 @@
           <p>Explore os filmes separados por genero</p>
         </div>
 
-        <input
-          type="text"
-          v-model="busca"
-          placeholder="Pesquisar por filme ou genero..."
-        >
+        <div class="filtros">
+          <input
+            type="text"
+            v-model="busca"
+            placeholder="Pesquisar por filme ou genero..."
+          >
+
+          <select v-model="generoSelecionado">
+            <option value="">Todos os generos</option>
+            <option
+              v-for="genero in generosDisponiveis"
+              :key="genero"
+              :value="genero"
+            >
+              {{ genero }}
+            </option>
+          </select>
+        </div>
       </header>
 
       <section
@@ -74,6 +87,7 @@ import logo from '../assets/logo.png'
 import { todosFilmes } from '../data/filmes'
 
 const busca = ref('')
+const generoSelecionado = ref('')
 
 const secoesPorGenero = computed(() => {
   const generos = {}
@@ -92,17 +106,20 @@ const secoesPorGenero = computed(() => {
   }))
 })
 
+const generosDisponiveis = computed(() => {
+  return secoesPorGenero.value.map(secao => secao.genero)
+})
+
 const secoesFiltradas = computed(() => {
   const termoBusca = busca.value.toLowerCase().trim()
-
-  if (termoBusca === '') {
-    return secoesPorGenero.value
-  }
+  const generoAtual = generoSelecionado.value
 
   return secoesPorGenero.value
+    .filter(secao => generoAtual === '' || secao.genero === generoAtual)
     .map(secao => ({
       genero: secao.genero,
       filmes: secao.filmes.filter(filme =>
+        termoBusca === '' ||
         filme.titulo.toLowerCase().includes(termoBusca) ||
         filme.genero.toLowerCase().includes(termoBusca)
       )

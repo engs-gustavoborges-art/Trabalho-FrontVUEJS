@@ -82,14 +82,29 @@
   color:#d1d5db;
 }
 
-.hero-categorias input{
+.filtros{
   width:100%;
-  max-width:420px;
+  max-width:620px;
+
+  display:grid;
+  grid-template-columns:1fr 190px;
+  gap:12px;
+}
+
+.filtros input,
+.filtros select{
+  width:100%;
   height:48px;
   padding:0 16px;
   border:none;
   border-radius:8px;
   font-size:15px;
+}
+
+.filtros select{
+  background:white;
+  color:#111827;
+  cursor:pointer;
 }
 
 .secao-genero{
@@ -195,8 +210,9 @@
     font-size:30px;
   }
 
-  .hero-categorias input{
+  .filtros{
     max-width:none;
+    grid-template-columns:1fr;
   }
 
   .secao-genero,
