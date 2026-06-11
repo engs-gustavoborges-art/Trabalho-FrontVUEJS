@@ -88,13 +88,27 @@ export default {
       return filtrarFilmes(filmesLancamento.value)
     })
 
+    function moverCarrossel(id, direcao) {
+      const carrossel = document.getElementById(id)
+
+      if (!carrossel) {
+        return
+      }
+
+      carrossel.scrollBy({
+        left: direcao * 280,
+        behavior: 'smooth'
+      })
+    }
+
     return {
       logo,
       busca,
       filmesDestaque,
       filmesLancamento,
       filmesDestaqueFiltrados,
-      filmesLancamentoFiltrados
+      filmesLancamentoFiltrados,
+      moverCarrossel
     }
   }
 }

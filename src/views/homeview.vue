@@ -30,20 +30,45 @@
       </header>
 
       <section class="filmes-destaque">
-        <h2>Filmes em Destaque</h2>
+        <div class="secao-topo">
+          <h2>Filmes em Destaque</h2>
 
-        <div class="grid">
+          <div class="controles">
+            <button
+              class="btn-carrossel"
+              type="button"
+              @click="moverCarrossel('carrossel-destaque', -1)"
+            >
+              ‹
+            </button>
+
+            <button
+              class="btn-carrossel"
+              type="button"
+              @click="moverCarrossel('carrossel-destaque', 1)"
+            >
+              ›
+            </button>
+          </div>
+        </div>
+
+        <div class="carrossel-area">
           <div
-            class="card"
-            v-for="filme in filmesDestaqueFiltrados"
-            :key="filme.id"
+            id="carrossel-destaque"
+            class="carrossel"
           >
-            <img :src="filme.imagem" :alt="filme.titulo">
+            <div
+              class="card"
+              v-for="filme in filmesDestaqueFiltrados"
+              :key="filme.id"
+            >
+              <img :src="filme.imagem" :alt="filme.titulo">
 
-            <div class="info">
-              <h3>{{ filme.titulo }}</h3>
-              <p>{{ filme.genero }}</p>
-              <span>Nota {{ filme.nota }}</span>
+              <div class="info">
+                <h3>{{ filme.titulo }}</h3>
+                <p>{{ filme.genero }}</p>
+                <span>Nota {{ filme.nota }}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -57,20 +82,45 @@
       </section>
 
       <section class="filmes-lancamento">
-        <h2>Filmes Lancamento</h2>
+        <div class="secao-topo">
+          <h2>Filmes Lancamento</h2>
 
-        <div class="grid">
+          <div class="controles">
+            <button
+              class="btn-carrossel"
+              type="button"
+              @click="moverCarrossel('carrossel-lancamento', -1)"
+            >
+              ‹
+            </button>
+
+            <button
+              class="btn-carrossel"
+              type="button"
+              @click="moverCarrossel('carrossel-lancamento', 1)"
+            >
+              ›
+            </button>
+          </div>
+        </div>
+
+        <div class="carrossel-area">
           <div
-            class="card"
-            v-for="filme in filmesLancamentoFiltrados"
-            :key="filme.id"
+            id="carrossel-lancamento"
+            class="carrossel"
           >
-            <img :src="filme.imagem" :alt="filme.titulo">
+            <div
+              class="card"
+              v-for="filme in filmesLancamentoFiltrados"
+              :key="filme.id"
+            >
+              <img :src="filme.imagem" :alt="filme.titulo">
 
-            <div class="info">
-              <h3>{{ filme.titulo }}</h3>
-              <p>{{ filme.genero }}</p>
-              <span>Nota {{ filme.nota }}</span>
+              <div class="info">
+                <h3>{{ filme.titulo }}</h3>
+                <p>{{ filme.genero }}</p>
+                <span>Nota {{ filme.nota }}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -190,18 +240,60 @@
   padding:32px 40px;
 }
 
-.filmes-destaque h2,
-.filmes-lancamento h2{
+.secao-topo{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
   margin-bottom:20px;
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+.controles{
+  display:flex;
+  gap:10px;
+}
+
+.btn-carrossel{
+  width:40px;
+  height:40px;
+
+  border:none;
+  border-radius:50%;
+
+  background:#dc2626;
+  color:white;
+
+  font-size:30px;
+  line-height:1;
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.btn-carrossel:hover{
+  background:#f40612;
+}
+
+.carrossel-area{
+  width:100%;
+  overflow:hidden;
+}
+
+.carrossel{
+  display:flex;
   gap:20px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  padding-bottom:4px;
+}
+
+.carrossel::-webkit-scrollbar{
+  display:none;
 }
 
 .card{
+  flex:0 0 240px;
   background:#222;
   border-radius:10px;
   overflow:hidden;
@@ -285,6 +377,18 @@
   .filmes-destaque,
   .filmes-lancamento{
     padding:24px 20px;
+  }
+
+  .secao-topo{
+    align-items:flex-start;
+  }
+
+  .card{
+    flex-basis:210px;
+  }
+
+  .card img{
+    height:280px;
   }
 
 }
