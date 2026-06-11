@@ -63,11 +63,24 @@ const senha = ref('')
 const erro = ref(false)
 
 function fazerLogin() {
+  const emailDigitado = email.value.trim().toLowerCase()
+  const senhaDigitada = senha.value.trim()
 
   if (
-    email.value.trim() === '' ||
-    senha.value.trim() === ''
+    emailDigitado === '' ||
+    senhaDigitada === ''
   ) {
+    erro.value = true
+    return
+  }
+
+  const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]')
+  const usuarioEncontrado = usuarios.find(usuario =>
+    usuario.email === emailDigitado &&
+    usuario.senha === senhaDigitada
+  )
+
+  if (!usuarioEncontrado) {
     erro.value = true
     return
   }
