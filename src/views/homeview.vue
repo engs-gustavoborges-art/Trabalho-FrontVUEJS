@@ -9,8 +9,8 @@
       >
 
       <nav class="menu">
-        <a href="#" class="menu-link ativo">Inicio</a>
-        <a href="#" class="menu-link">Filmes</a>
+        <router-link to="/home" class="menu-link ativo">Inicio</router-link>
+        <router-link to="/categorias" class="menu-link">Categorias</router-link>
         <a href="#" class="menu-link">Favoritos</a>
         <router-link to="/login" class="menu-link">Sair</router-link>
       </nav>
