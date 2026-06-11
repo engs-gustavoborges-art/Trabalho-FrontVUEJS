@@ -185,49 +185,49 @@ export const filmesCategoriaExtras = [
     titulo: 'Jurassic Park',
     genero: 'Aventura',
     nota: 8.2,
-    imagem: 'https://placehold.co/300x450/222222/ffffff?text=Jurassic+Park'
+    imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS43aWmu7Cat3l7fKjhqxGEz82cdn-XmvKhw&s'
   },
   {
     id: 27,
     titulo: 'Piratas do Caribe',
     genero: 'Aventura',
     nota: 8.1,
-    imagem: 'https://placehold.co/300x450/222222/ffffff?text=Piratas'
+    imagem: 'https://br.web.img3.acsta.net/c_310_420/pictures/14/02/06/15/11/493568.jpg'
   },
   {
     id: 28,
     titulo: 'Jumanji',
     genero: 'Aventura',
     nota: 7.1,
-    imagem: 'https://placehold.co/300x450/222222/ffffff?text=Jumanji'
+    imagem: 'https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/96/54/75/20474449.jpg'
   },
   {
     id: 29,
     titulo: 'Invocacao do Mal',
     genero: 'Terror',
     nota: 7.5,
-    imagem: 'https://placehold.co/300x450/222222/ffffff?text=Invocacao+do+Mal'
+    imagem: 'https://br.web.img2.acsta.net/pictures/210/166/21016629_2013062820083878.jpg'
   },
   {
     id: 30,
     titulo: 'Corra',
     genero: 'Terror',
     nota: 7.8,
-    imagem: 'https://placehold.co/300x450/222222/ffffff?text=Corra'
+    imagem: 'https://m.media-amazon.com/images/I/61RsJbAFxbS._AC_UF894,1000_QL80_.jpg'
   },
   {
     id: 31,
     titulo: 'Um Lugar Silencioso',
     genero: 'Terror',
     nota: 7.5,
-    imagem: 'https://placehold.co/300x450/222222/ffffff?text=Lugar+Silencioso'
+    imagem: 'https://br.web.img2.acsta.net/c_310_420/pictures/18/03/01/20/26/0577579.jpg'
   },
   {
     id: 32,
     titulo: 'It: A Coisa',
     genero: 'Terror',
     nota: 7.3,
-    imagem: 'https://placehold.co/300x450/222222/ffffff?text=It'
+    imagem: 'https://upload.wikimedia.org/wikipedia/pt/8/82/It_2017.jpg'
   }
 ]
 
