@@ -137,3 +137,11 @@ src/
 - **views/** → páginas da aplicação.
 
 ---
+
+## 👨‍💻 Autores
+
+- Gabriel Krupek
+- Gustavo Borges
+- Kauã Delgado
+
+Projeto desenvolvido para fins acadêmicos na disciplina de Desenvolvimento Front-End utilizando Vue.js.
