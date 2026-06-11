@@ -29,13 +29,13 @@
         >
       </header>
 
-      <section class="filmes">
+      <section class="filmes-destaque">
         <h2>Filmes em Destaque</h2>
 
         <div class="grid">
           <div
             class="card"
-            v-for="filme in filmesFiltrados"
+            v-for="filme in filmesDestaqueFiltrados"
             :key="filme.id"
           >
             <img :src="filme.imagem" :alt="filme.titulo">
@@ -49,12 +49,40 @@
         </div>
 
         <p
-          v-if="filmesFiltrados.length === 0"
+          v-if="filmesDestaqueFiltrados.length === 0"
           class="sem-resultados"
         >
-          Nenhum filme encontrado.
+          Nenhum filme em destaque encontrado.
         </p>
       </section>
+
+      <section class="filmes-lancamento">
+        <h2>Filmes Lancamento</h2>
+
+        <div class="grid">
+          <div
+            class="card"
+            v-for="filme in filmesLancamentoFiltrados"
+            :key="filme.id"
+          >
+            <img :src="filme.imagem" :alt="filme.titulo">
+
+            <div class="info">
+              <h3>{{ filme.titulo }}</h3>
+              <p>{{ filme.genero }}</p>
+              <span>Nota {{ filme.nota }}</span>
+            </div>
+          </div>
+        </div>
+
+        <p
+          v-if="filmesLancamentoFiltrados.length === 0"
+          class="sem-resultados"
+        >
+          Nenhum filme lancamento encontrado.
+        </p>
+      </section>
+
     </main>
 
   </div>
@@ -157,11 +185,13 @@
   font-size:15px;
 }
 
-.filmes{
+.filmes-destaque,
+.filmes-lancamento{
   padding:32px 40px;
 }
 
-.filmes h2{
+.filmes-destaque h2,
+.filmes-lancamento h2{
   margin-bottom:20px;
 }
 
@@ -252,7 +282,8 @@
     max-width:none;
   }
 
-  .filmes{
+  .filmes-destaque,
+  .filmes-lancamento{
     padding:24px 20px;
   }
 
