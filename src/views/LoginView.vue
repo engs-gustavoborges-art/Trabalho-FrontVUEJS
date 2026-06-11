@@ -97,21 +97,28 @@ function fazerLogin() {
 }
 
 .container{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:#f4f4f4;
-  padding:20px;
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url('../assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .login-card{
-  width:100%;
-  max-width:500px;
-  background:white;
-  padding:30px;
-  border-radius:15px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+
+  background: rgba(255,255,255,0.95);
+  padding: 30px;
+  border-radius: 15px;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 
 h1{
@@ -159,20 +166,6 @@ ul{
 
 li{
   margin-bottom:5px;
-}
-
-/* RESPONSIVIDADE */
-
-@media (max-width:768px){
-
-  .login-card{
-    padding:20px;
-  }
-
-  h1{
-    font-size:24px;
-  }
-
 }
 
 </style>
