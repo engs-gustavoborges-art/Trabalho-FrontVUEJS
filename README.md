@@ -1,5 +1,15 @@
-# Vue 3 + Vite
+# Trabalho Front VueJS
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 📖 Descrição
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+Este projeto foi desenvolvido utilizando **Vue.js 3** e **Vite**, com o objetivo de criar uma aplicação web para navegação e visualização de filmes.
+
+O sistema possui funcionalidades como:
+
+- Página inicial;
+- Tela de login;
+- Tela de cadastro;
+- Listagem de categorias;
+- Visualização de detalhes de filmes;
+- Gerenciamento de favoritos;
+- Navegação utilizando Vue Router.
