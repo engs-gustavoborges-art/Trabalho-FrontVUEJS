@@ -13,3 +13,16 @@ O sistema possui funcionalidades como:
 - Visualização de detalhes de filmes;
 - Gerenciamento de favoritos;
 - Navegação utilizando Vue Router.
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- Vue.js 3
+- Vite
+- Vue Router
+- Pinia
+- Axios
+- JavaScript
+- HTML5
+- CSS3
