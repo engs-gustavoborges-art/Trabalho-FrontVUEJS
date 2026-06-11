@@ -178,7 +178,7 @@ export const filmesCategoriaExtras = [
     titulo: 'Indiana Jones',
     genero: 'Aventura',
     nota: 8.4,
-    imagem: 'https://placehold.co/300x450/222222/ffffff?text=Indiana+Jones'
+    imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXTtLADZeAkSbotIotk_o5bRCex2nP5O7um1MIj9erCmcT0SY82kqKSwP3AO4eqMWAQivrSx-0I55ljSJL8wg7sJxEsCiE3XfPycG0JbF-Ww&s=10https://placehold.co/300x450/222222/ffffff?text=Indiana+Jones'
   },
   {
     id: 26,
